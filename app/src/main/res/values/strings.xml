@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">DreamApp</string>
+    <string name="btnGrabarVideo">Grabar</string>
+    <string name="todo1">TODO1</string>
+    <string name="toma_una_foto">Toma una foto</string>
+    <string name="tomar_una_foto">tomar_una_foto</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
