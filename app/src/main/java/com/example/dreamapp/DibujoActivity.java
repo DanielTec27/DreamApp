@@ -197,19 +197,20 @@ public class DibujoActivity extends AppCompatActivity implements ToolsListener {
 
         if (requestCode == PICK_IMAGE && data != null && resultCode == RESULT_OK){
             Uri pickedImage = data.getData();
-            String[] filePath = {MediaStore.Images.Media.DATA};
-            Cursor cursor = getContentResolver().query(pickedImage, filePath, null, null, null);
-            cursor.moveToFirst();
-            String imagePath = cursor.getString(cursor.getColumnIndex(filePath[0]));
 
-            BitmapFactory.Options options = new BitmapFactory.Options();
-            options.inPreferredConfig = Bitmap.Config.ARGB_8888;
+            try {
 
-            Bitmap bitmap = BitmapFactory.decodeFile(imagePath, options);
+                Bitmap bitmapImage = MediaStore.Images.Media.getBitmap(this.getContentResolver(), pickedImage);
+                BitmapFactory.Options options = new BitmapFactory.Options();
+                options.inPreferredConfig = Bitmap.Config.ARGB_8888;
 
-            mPaintView.setImage(bitmap);
+                //Bitmap bitmap = BitmapFactory.decodeFile(imagePath, options);
 
-            cursor.close();
+                mPaintView.setImageB(bitmapImage);//.setImageB(bitmap);//.setImage(bitmap);
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
 
         }
         super.onActivityResult(requestCode, resultCode, data);

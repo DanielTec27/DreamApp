@@ -180,7 +180,7 @@ public class PaintView extends View {
 
 
 
-    public void setImage(Bitmap bitmap) {
+    public void setImageB(Bitmap bitmap) {
         image = Bitmap.createScaledBitmap(bitmap, getWidth()/2, getHeight()/2, true);
         invalidate();
     }

@@ -42,7 +42,7 @@ public class AdapterFrame extends BaseAdapter {
     @Override
     public View getView(int i, View convertView, ViewGroup viewGroup) {
 
-        View v = convertView;
+        View v;
         LayoutInflater layoutInflater = LayoutInflater.from(this.context);
         if (convertView == null) {
             v = layoutInflater.inflate(this.layout, null);
@@ -56,6 +56,6 @@ public class AdapterFrame extends BaseAdapter {
         textView.setText(currentName);
 
         Glide.with(this.context).load(currentPath).centerCrop().into(imageView);
-        return null;
+        return v;
     }
 }
